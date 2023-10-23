@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sur-mesure{% endblock %}
+
+{% block body %}
+
+    <h1>Réalisations sur mesure</h1>
+
+    {% for serie in series %}
+        <h2>{{ serie.titre }}</h2>
+        <ul>
+            {% for realisation in serie.getRealisations() %}
+                <li><img src="{{ realisation.image }}" alt="{{ realisation.nom }}"></li>
+                <li>{{ realisation.nom }}</li> 
+                <li>{{ realisation.description }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+{% endblock %}
+

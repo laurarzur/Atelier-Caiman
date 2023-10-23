@@ -1,0 +1,9 @@
+<h1>Confirmation de votre compte utilisateur</h1> 
+<p>
+    Bonjour {{ utilisateur.prenom }} et bienvenue sur le site Atelier Caïman.<br><br>
+    Veuillez activer votre compte en cliquant sur le lien ci-dessous.<br><br> 
+    Ce lien est valable jusqu'au <strong>{{ lifeTimeToken }}</strong>.<br><br>
+    <a href="{{ absolute_url(path('account_verify', {token: token, id: utilisateur.id})) }}">Activer mon compte</a><br><br>
+    Ceci est un email automatique, merci de ne pas y répondre.<br><br>
+    À bientôt.
+</p>
