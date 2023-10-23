@@ -63,7 +63,7 @@ class PaymentController extends AbstractController
             'quantity' => 1
         ];
 
-        Stripe::setApiKey('sk_test_51O2EiKDBDeRrFGbA6nRw8qxguKXbKtnmLmIVPMW4X7vErGZrEi0bfwmoBKHMKE5edu0vdO8022axPFi7qpnckQMV008IPFZZnx');
+        Stripe::setApiKey('');
 
         $checkout_session = \Stripe\Checkout\Session::create([
             'customer_email' => $this->getUser()->getEmail(),
@@ -102,8 +102,8 @@ class PaymentController extends AbstractController
 
     public function getPaypalClient(): PaypalHttpClient 
     {
-        $clientId = "AbmmzgyHhmjUGpDk88BNyt6n00D_-fSY0X5L9m2yBzsGc5Ix4-iOSNyHhpfGHZ9H--_-LLacIrK_FtLH"; 
-        $clientSecret = "EBc1Vc4U30DS20hgid9bGCE5HmzlwWf9bASChYpnFagybzZ2tjy25MY2GjgvR8GYFtgL7ABmu1yKe1jF"; 
+        $clientId = ""; 
+        $clientSecret = ""; 
         $environment = new SandboxEnvironment($clientId, $clientSecret); 
         return new PaypalHttpClient($environment);
     }
